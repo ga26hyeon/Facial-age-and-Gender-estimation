@@ -1,0 +1,33 @@
+# Local-only runtime, generated data and model binaries
+.python-runtime/
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.env
+.env.*
+*.log
+logs/
+data/
+uploads/
+models/*.onnx
+models/*.part
+models/*.tmp
+models/*.lock
+*.jpg
+*.jpeg
+*.png
+*.webp
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Keep the reproducibility manifest, but never model weights.
+!models/
+!models/manifest.json

@@ -1,0 +1,12 @@
+{
+  "age": {
+    "source": "https://huggingface.co/onnxmodelzoo/age_googlenet/resolve/0965ebb8f50c58feffcfa4f889cd43049e2476f4/age_googlenet.onnx",
+    "revision": "0965ebb8f50c58feffcfa4f889cd43049e2476f4",
+    "sha256": "fa2a3228e425056aa2b080b3afd3cf607327c86616e952602ed67b5fc16ab356"
+  },
+  "gender": {
+    "source": "https://huggingface.co/onnxmodelzoo/gender_googlenet/resolve/0eeffd53530c5eb33265172faceb283cb1159082/gender_googlenet.onnx",
+    "revision": "0eeffd53530c5eb33265172faceb283cb1159082",
+    "sha256": "af24a4eaa9eaf70913cc9a337a0387c86f11549cbd9bbc16bffeefcdcf88cbf4"
+  }
+}
