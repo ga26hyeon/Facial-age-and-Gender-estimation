@@ -30,9 +30,13 @@ def choose_python():
             continue
         checked.add(key)
         try:
+            env = os.environ.copy()
+            env.setdefault('OPENBLAS_NUM_THREADS', '1')
+            env.setdefault('OMP_NUM_THREADS', '1')
+            env.setdefault('MKL_NUM_THREADS', '1')
             result = subprocess.run([*command, '-c', code], cwd=ROOT, capture_output=True,
-                                    timeout=25, check=False)
-            for line in result.stdout.decode('ascii', errors='ignore').splitlines():
+                                    timeout=25, check=False, env=env, text=True, encoding='utf-8', errors='replace')
+            for line in result.stdout.splitlines():
                 if result.returncode == 0 and line.startswith(MARKER):
                     executable = Path(json.loads(line[len(MARKER):]))
                     if executable.is_file():
@@ -63,6 +67,9 @@ def reserve_socket():
 
 def serve():
     os.chdir(ROOT)
+    os.environ.setdefault('OPENBLAS_NUM_THREADS', '1')
+    os.environ.setdefault('OMP_NUM_THREADS', '1')
+    os.environ.setdefault('MKL_NUM_THREADS', '1')
     sys.path.insert(0, str(ROOT))
     import uvicorn
     with reserve_socket() as listener:
