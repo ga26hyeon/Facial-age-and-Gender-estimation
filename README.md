@@ -1,4 +1,4 @@
-# Face Lab
+# Facial-age-and-Gender-estimation (Face Lab)
 
 FastAPI와 HTML/CSS/JavaScript로 만든 로컬 얼굴 나이·성별 추정 실험 앱입니다. ONNX Model Zoo의 Adience GoogleNet age/gender 모델을 `CPUExecutionProvider`로 실행합니다.
 
